@@ -11,8 +11,8 @@ module.exports = {
     name:'My App',
     themColor: '#4DBA87',
     msTileColor: '#000000',
-    appleMobileWebAppCable: 'no',
-    appleMobileWebAppStatusBarStyle:'default',
+    appleMobileWebAppCable: 'yes',
+    appleMobileWebAppStatusBarStyle:'black',
 
     workboxPluginMode: 'InjectManifest',
     workboxOptions:{
