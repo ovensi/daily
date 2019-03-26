@@ -13,6 +13,7 @@ import App from './App.vue';
 import './registerServiceWorker';
 import '@/assets/iconfont.js';
 import router from './router';
+import store from './store'
 
 if('addEventListener' in document){
   document.addEventListener(
@@ -31,5 +32,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
+  store,
   render: (h)=>h(App),
 }).$mount('#app');
