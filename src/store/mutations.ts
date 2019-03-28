@@ -112,4 +112,19 @@ export default {
       const day = habit!.habitLog.date.find(item => item.id === payload.daysId);
       day!.message = payload.message;
     },
+
+    // 切换习惯当前状态
+    changeModel(state:State,payload:{id:number,value:string}){
+      const list = state.habitList;
+      const habit = _.find(list,payload.id)
+      habit!.isActive = true;
+      habit!.mode = payload.value;
+    },
+
+    // 将此习惯归档
+    deleteHabit(state: State, id:number){
+      const list = state.habitList;
+      const habit = _.find(list,id);
+      habit!.isActive = false;
+    }
 }
