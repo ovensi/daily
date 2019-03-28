@@ -2,10 +2,8 @@
    <header>
     <aside v-if="!!headerInfo.left" @click="leftHandle">
       <Icon :name='headerInfo.left'></Icon>
-      
     </aside>
     <div v-else></div>
-
     <h3>{{headerInfo.title}}</h3>
     <aside v-if="!!headerInfo.right" @click="rightHandle">
       <Icon :name="headerInfo.right"></Icon>
@@ -86,5 +84,19 @@ export default class Header extends Vue{
 
 
 <style lang="scss" scoped>
+header {
+  display: grid;
+  grid-template-columns: 3rem auto 3rem;
+  align-items: center;
+  grid-row-end: end;
+  width: 100%;
+  height: 3.5rem;
+  min-height: 8%;
+  background-color: #fff;
+}
 
+.van-popup {
+  width: 100%;
+  height: 100%;
+}
 </style>
