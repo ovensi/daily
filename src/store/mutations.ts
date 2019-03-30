@@ -126,5 +126,23 @@ export default {
       const list = state.habitList;
       const habit = _.find(list,id);
       habit!.isActive = false;
+    },
+
+    // 是否开启整点报时
+    changeHourly(state: State,checked: boolean){
+      state.setting.checked = checked;
+    },
+
+    // 退出登录
+    logoutSuccess(state:State){
+      state.user!.id = null;
+      state.user!.username = '';
+      state.user!.url = 'https://is4-ssl.mzstatic.com/image/thumb/Purple71/v4/be/13/06/be1306d8-e343-2adb-2b04-9a6884300499/pr_source.jpg/1200x630bb.jpg';
+      state.user!.isLogin = -1;
+     },
+
+    //是否同步成功
+    sync(state:State,isSync: number){
+      state.user!.isSync = isSync;
     }
 }

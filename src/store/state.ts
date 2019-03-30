@@ -41,6 +41,26 @@ export interface PageInfo{
   path:string;
   tagName: string;
 }
+
+export interface SettingState{
+  checked: boolean;
+  url: string;
+}
+
+export interface UserState{
+  username: string|undefined;
+  id: number |null;
+  createdTime: string|undefined;
+  url: string;
+  isLogin: number;
+  isSync: number;
+}
+
+export interface Card{
+  src: string;
+  content?: string;
+}
+
 // 单个习惯的信息
 export interface HabitList{
   id:number;
@@ -78,6 +98,9 @@ export interface State{
     finishedDate:moment.Moment[]|never[];
     isReceived: boolean;
   };
+  setting: SettingState;
+  user?: UserState;
+  card: Card;
 }
 
 const state:State = {
@@ -196,7 +219,24 @@ const state:State = {
     active:[0],
     finishedDate: [],
     isReceived: false,
-  }
+  },
+  card:{
+    src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-5xlxmMc1UjkLOsMSPPX9sKgNr3XuCNHCCCwI__iXCx2zftWo',
+    content: '1',
+  },
+  setting: {
+    checked: false,
+    url:
+      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4216091012,4283409120&fm=27&gp=0.jpg',
+  },
+  user:{
+    isLogin: -1,
+    username: '',
+    id: null,
+    createdTime: '',
+    isSync: -1,
+    url:'https://is4-ssl.mzstatic.com/image/thumb/Purple71/v4/be/13/06/be1306d8-e343-2adb-2b04-9a6884300499/pr_source.jpg/1200x630bb.jpg',
+  },
 }
 
 export default state;
