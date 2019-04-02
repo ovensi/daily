@@ -144,5 +144,27 @@ export default {
     //是否同步成功
     sync(state:State,isSync: number){
       state.user!.isSync = isSync;
+    },
+
+    // 登录成功执行
+    loginLoading(state:State,data:any){
+      state.user!.isLogin = 0;
+    },
+
+    // 登录成功后后执行
+    loginSuccess(state:State,data:any){
+      const currentState = JSON.parse(data.content);
+
+      state.activePage = currentState.activePage;
+      state.headerInfo = currentState.headerInfo;
+      state.card = currentState.card;
+      state.habitList = currentState.habitList;
+      state.today = currentState.today;
+      state.setting = currentState.setting;
+
+      state.user!.id = data.id;
+      state.user!.username = data.username;
+      state.user!.url = data.url;
+      state.user!.isLogin = 1;
     }
 }

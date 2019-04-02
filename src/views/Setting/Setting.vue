@@ -1,11 +1,11 @@
 <template>
   <div class="setting">
     <!-- 头像 -->
-    <section class="avator">
+    <section class="avatar">
       <vue-lazy-component :timeout="1000">
         <router-link :to="{path:'/login'}">
           <div>
-            <img src="user.url" v-if="user.url" alt="头像">
+            <img :src="user.url" v-if="user.url" alt="头像">
             <icon v-else name="user"></icon>
             <p v-if="user.username">{{user.username}}</p>
           </div>
