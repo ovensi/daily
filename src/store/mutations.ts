@@ -166,5 +166,13 @@ export default {
       state.user!.username = data.username;
       state.user!.url = data.url;
       state.user!.isLogin = 1;
+    },
+    
+    // 领取卡片 
+    receiveCard(state:State){
+      const today = moment(); 
+      // @ts-ignore
+      state.today.finishedDate.push(today);
+      state.today.isReceived = true;
     }
 }

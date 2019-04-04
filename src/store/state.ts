@@ -1,4 +1,4 @@
-import moment, { Moment } from 'moment';
+import moment from 'moment';
 
 export interface RepeatingDateState{
   id: number;
@@ -95,7 +95,7 @@ export interface State{
   habitList: HabitList[];
   today:{
     active:string[]|never[]|number[];
-    finishedDate:moment.Moment[]|never[];
+    finishedDate: moment.Moment[] | never[];
     isReceived: boolean;
   };
   setting: SettingState;

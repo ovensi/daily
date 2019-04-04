@@ -14,7 +14,12 @@ const Feedback = (resolve:any)=>
 const UpdateLog = (resolve:any)=>
   (require as any).ensure([],()=>resolve(require('@/views/UpdateLog/UpdateLog'),'UpdateLog')
 )
+const Card= (resolve:any)=>
+  (require as any).ensure([],()=>resolve(require('@/views/Card/Card'),'Card')
+)
 
+const Receive = (resolve:any)=>
+  (require as any).ensure([],()=>resolve(require('@/views/Card/Receive/Card'),'Receive'))
 
 
 Vue.use(Router)
@@ -53,7 +58,19 @@ export default new Router({
     {
       path: '/update',
       name: '更新日志',
-      component: UpdateLog
+      component: UpdateLog,
+    },
+    {
+      path: '/card',
+      name: '卡片管理',
+      component: Card,
+      children:[
+        {
+          path: 'receive',
+          name: '今日卡片',
+          component: Receive
+        }
+      ]
     }
   ]
 })
