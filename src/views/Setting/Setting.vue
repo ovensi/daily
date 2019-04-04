@@ -26,10 +26,10 @@
     <section>
       <van-cell-group>
         <van-cell title="主题商店" @click="handleToast" is-link></van-cell>
-        <router-link to="{path:'/feedback'}">
+        <router-link :to="{path:'/feedback'}">
           <van-cell title="给作者反馈" is-link></van-cell>
         </router-link>
-        <router-link to="{path:'/update'}">
+        <router-link :to="{path:'/update'}">
           <van-cell is-link title="更新日志"></van-cell>
         </router-link>
       </van-cell-group>

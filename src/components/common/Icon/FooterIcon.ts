@@ -16,14 +16,14 @@ export default class FooterIcon extends Vue{
   @Prop() private isActived!: boolean;
   @Prop() private tagName!: string;
 
-  @Mutation private getAcetiviPage!:(pageName:number)=>void;
+  @Mutation private getActivePage!:(pageName:number)=>void;
   @Mutation private changeHeaderState!:(pageName: number)=>void;
 
   private changeActivePage(){
     const id = this.id;
 
     if(this.isActived){
-      this.getAcetiviPage(id);
+      this.getActivePage(id);
       this.changeHeaderState(id);
     }
   }

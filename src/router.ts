@@ -8,6 +8,13 @@ import Setting from './views/Setting/Setting.vue'
 const Login = (resolve:any)=>
   (require as any).ensure([],()=>resolve(require('@/views/Login/Login'),'Login')
 )
+const Feedback = (resolve:any)=>
+  (require as any).ensure([],()=>resolve(require('@/views/Feedback/Feedback'),'Feedback')
+)
+const UpdateLog = (resolve:any)=>
+  (require as any).ensure([],()=>resolve(require('@/views/UpdateLog/UpdateLog'),'UpdateLog')
+)
+
 
 
 Vue.use(Router)
@@ -37,6 +44,16 @@ export default new Router({
       path:'/login',
       name:'登录',
       component: Login,
+    },
+    {
+      path: '/feedback',
+      name: '反馈',
+      component: Feedback,
+    },
+    {
+      path: '/update',
+      name: '更新日志',
+      component: UpdateLog
     }
   ]
 })
