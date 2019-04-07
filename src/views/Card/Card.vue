@@ -39,7 +39,7 @@ export default class CardPage extends Vue{
 }
 </script>
 
-<style lang="scss" scoped>
+<style src="./style.scss" lang="scss" scoped>
 
 </style>
 

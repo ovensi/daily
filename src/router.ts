@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+
 import Home from './views/Home/Home.vue'
 import Habit from './views/Habit/Habit.vue';
 import Setting from './views/Setting/Setting.vue'
@@ -21,6 +22,16 @@ const Card= (resolve:any)=>
 const Receive = (resolve:any)=>
   (require as any).ensure([],()=>resolve(require('@/views/Card/Receive/Card'),'Receive'))
 
+const New = (resolve:any)=>
+  (require as any).ensure([],()=>resolve(require('@/views/New/New'),'New'))
+
+
+const Library = (resolve: any)=>
+  (require as any).ensure([],()=>resolve(require('@/views/New/Library/Library'),'Library'))
+
+
+const NewHabit = (resolve: any)=>
+  (require as any).ensure([],resolve(require('@/views/New/Habit/Habit'),'Habit'))
 
 Vue.use(Router)
 
@@ -69,6 +80,23 @@ export default new Router({
           path: 'receive',
           name: '今日卡片',
           component: Receive
+        }
+      ]
+    },
+    {
+      path: '/new',
+      name: '新建习惯',
+      component: New,
+      children:[
+        {
+          path:'library',
+          name: '习惯库',
+          component: Library,
+        },
+        {
+          path: 'habit',
+          name:'习惯',
+          component: NewHabit,
         }
       ]
     }

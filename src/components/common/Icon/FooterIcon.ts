@@ -21,8 +21,7 @@ export default class FooterIcon extends Vue{
 
   private changeActivePage(){
     const id = this.id;
-
-    if(this.isActived){
+    if(!this.isActived){
       this.getActivePage(id);
       this.changeHeaderState(id);
     }
